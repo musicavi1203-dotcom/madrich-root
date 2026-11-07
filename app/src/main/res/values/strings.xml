@@ -25,11 +25,11 @@
     <string name="step1_body">פתיחת Bootloader מוחקת את כל הנתונים במכשיר. גבה מה שחשוב לפני שממשיכים.</string>
     <string name="step1_how">1. הגדרות ← אודות הטלפון ← לחץ 7 פעמים על מספר הבנייה\n2. חזור ← אפשרויות מפתח ← הפעל ניפוי USB ו-פתיחת OEM\n3. העבר את המכשיר למצב Bootloader וחבר אותו ל-USB\n4. לחץ התחבר ל-Fastboot למעלה, והמסך יציג את מצב ה-Bootloader</string>
     <string name="step2_title">שאיבת boot.img</string>
-    <string name="step2_body">שאיבת המחיצה הנוכחית כדי שיהיה לך גיבוי ובסיס לפאצ'.</string>
-    <string name="step3_title">פאצ' עם Magisk</string>
-    <string name="step3_body">הפאצ' נעשה באפליקציית Magisk על המכשיר, מקובץ ה-boot המקורי.</string>
-    <string name="step4_title">צריבת boot מפוצ'</string>
-    <string name="step4_body">צריבת הקובץ המפוצ' חזרה למחיצה boot.</string>
+    <string name="step2_body">שאיבת המחיצה הנוכחית כדי שיהיה לך גיבוי ובסיס לפאצ\'.</string>
+    <string name="step3_title">פאצ\' עם Magisk</string>
+    <string name="step3_body">הפאצ\' נעשה באפליקציית Magisk על המכשיר, מקובץ ה-boot המקורי.</string>
+    <string name="step4_title">צריבת boot מפוצ\'</string>
+    <string name="step4_body">צריבת הקובץ המפוצ\' חזרה למחיצה boot.</string>
     <string name="step5_title">הפעלה מחדש</string>
     <string name="step5_body">הפעלת המכשיר מחדש למערכת לאחר הצריבה.</string>
     <string name="coming_soon">השלב הזה יופעל בבנייה הבאה</string>
