@@ -11,6 +11,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -141,8 +142,12 @@ private fun GuideScreen() {
     fun checkPartitions() {
         scope.launch {
             busy = true
-            fb.getVarAll(setLog)
-                .onFailure { setLog(it.message ?: "") }
+            // צוברים את כל השורות כדי שהיומן יציג את כל הפלט, לא רק את האחרונה
+            val lines = StringBuilder()
+            fb.getVarAll { line ->
+                lines.append(line).append('\n')
+                setLog(lines.toString())
+            }.onFailure { setLog(lines.toString() + (it.message ?: "")) }
             busy = false
         }
     }
@@ -429,7 +434,15 @@ private fun GuideScreen() {
             Card(modifier = Modifier.fillMaxWidth()) {
                 Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
                     Text(text = stringResource(R.string.log_label), fontWeight = FontWeight.Bold)
-                    Text(text = log)
+                    SelectionContainer {
+                        Text(
+                            text = log,
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .heightIn(max = 320.dp)
+                                .verticalScroll(rememberScrollState())
+                        )
+                    }
                 }
             }
         }
