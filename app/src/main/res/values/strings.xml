@@ -20,23 +20,54 @@
     <string name="btn_connect">התחבר ל-Fastboot</string>
     <string name="btn_disconnect">נתק</string>
     <string name="btn_reboot">הפעל מערכת</string>
+    <string name="rebooting_system">המכשיר מופעל מחדש למערכת</string>
+    <string name="btn_adb_connect">התחבר ב-ADB</string>
+    <string name="adb_connected">ADB מחובר: %1$s</string>
+    <string name="btn_to_fastboot">העבר ל-Fastboot</string>
+    <string name="adb_to_fastboot_wait">נשלחה פקודה. ממתין לחיבור Fastboot...</string>
+
+    <string name="log_label">יומן</string>
 
     <string name="step1_title">פתיחת Bootloader</string>
     <string name="step1_body">פתיחת Bootloader מוחקת את כל הנתונים במכשיר. גבה מה שחשוב לפני שממשיכים.</string>
     <string name="step1_how">1. הגדרות ← אודות הטלפון ← לחץ 7 פעמים על מספר הבנייה\n2. חזור ← אפשרויות מפתח ← הפעל ניפוי USB ו-פתיחת OEM\n3. העבר את המכשיר למצב Bootloader וחבר אותו ל-USB\n4. לחץ התחבר ל-Fastboot למעלה, והמסך יציג את מצב ה-Bootloader</string>
-    <string name="step2_title">שאיבת boot.img</string>
-    <string name="step2_body">שאיבת המחיצה הנוכחית כדי שיהיה לך גיבוי ובסיס לפאצ\'.</string>
-    <string name="step3_title">פאצ\' עם Magisk</string>
-    <string name="step3_body">הפאצ\' נעשה באפליקציית Magisk על המכשיר, מקובץ ה-boot המקורי.</string>
-    <string name="step4_title">צריבת boot מפוצ\'</string>
-    <string name="step4_body">צריבת הקובץ המפוצ\' חזרה למחיצה boot.</string>
-    <string name="step5_title">הפעלה מחדש</string>
-    <string name="step5_body">הפעלת המכשיר מחדש למערכת לאחר הצריבה.</string>
-    <string name="coming_soon">השלב הזה יופעל בבנייה הבאה</string>
-    <string name="step_done">הושלם</string>
+
+    <string name="step2_title">ביטול אימות (vbmeta)</string>
+    <string name="step2_body">שואב את vbmeta, מכבה בו את דגלי האימות וצורב אותו חזרה. בלי זה, boot מפוצ\' לא יעלה במכשירים מסוימים.</string>
+    <string name="btn_disable_verity">בטל אימות (vbmeta)</string>
+    <string name="verity_done">האימות בוטל בהצלחה</string>
+    <string name="err_vbmeta_not_avb">הקובץ שנשאב אינו vbmeta תקין. הפעולה בוטלה</string>
+    <string name="err_fetch_failed">השאיבה נכשלה: %1$s</string>
+
+    <string name="step3_title">שאיבת boot.img</string>
+    <string name="step3_body">שואב את boot הנוכחי ושומר אותו למיקום שתבחר. זה הגיבוי שלך לחזרה אחורה.</string>
+    <string name="btn_fetch_boot">שאב boot.img</string>
+    <string name="fetch_boot_ok">boot נשאב. בחר מיקום לשמירת הגיבוי</string>
+    <string name="backup_saved">הגיבוי נשמר</string>
+
+    <string name="step4_title">פאצ\' עם Magisk</string>
+    <string name="step4_body">פתח את Magisk, לחץ Install ← Select and Patch a File, ובחר את boot.img ששמרת. הקובץ המפוצ\' נשמר בתיקיית ההורדות. כשסיימת, לחץ על הכפתור למטה.</string>
+    <string name="btn_open_magisk">פתח Magisk</string>
+    <string name="magisk_missing">Magisk לא מותקן במכשיר. התקן אותו ונסה שוב</string>
+    <string name="btn_patch_done">סיימתי את הפאצ\'</string>
+
+    <string name="step5_title">צריבת boot מפוצ\'</string>
+    <string name="step5_body">בחר את הקובץ המפוצ\' וצרוב אותו למחיצה boot. האפליקציה בודקת שהוא מתאים לפני הצריבה.</string>
+    <string name="btn_pick_patched">בחר boot מפוצ\' וצרוב</string>
+    <string name="flash_boot_title">לצרוב את boot?</string>
+    <string name="flash_check_body">מחיצה: %1$s (%2$s)\nקובץ %3$s (%4$s)\nלא ניתן לבטל אחרי שהצריבה מתחילה.</string>
+    <string name="flash_boot_done">boot נצרב בהצלחה</string>
+    <string name="err_flash_too_big">הקובץ גדול מהמחיצה. הצריבה נחסמה.</string>
+
+    <string name="step6_title">הפעלה מחדש</string>
+    <string name="step6_body">מפעיל את המכשיר למערכת. אם הוא לא עולה, היכנס ל-Recovery ושחזר את הגיבוי משלב 3.</string>
+
+    <string name="btn_confirm">אישור</string>
+    <string name="btn_cancel">ביטול</string>
 
     <string name="err_no_fastboot_device">לא נמצא מכשיר fastboot. ודא שהמכשיר במצב Bootloader וכבל ה-OTG מחובר</string>
+    <string name="err_no_adb_device">לא נמצא מכשיר ADB. ודא שכבל ה-OTG מחובר ושניפוי USB פעיל במכשיר היעד</string>
     <string name="err_permission">לא ניתנה הרשאת USB</string>
     <string name="err_file_open">לא ניתן לפתוח את הקובץ</string>
-    <string name="err_not_connected">אין חיבור Fastboot פעיל. לחץ התחבר</string>
+    <string name="err_not_connected">אין חיבור פעיל. לחץ התחבר</string>
 </resources>

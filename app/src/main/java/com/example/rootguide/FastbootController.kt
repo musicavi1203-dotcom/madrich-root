@@ -118,6 +118,25 @@ class FastbootController(private val context: Context) {
             }
         }
 
+    // צורב נתונים שבזיכרון למחיצה (משמש לצריבת vbmeta אחרי תיקון הדגלים)
+    suspend fun flashBytes(
+        baseName: String,
+        slot: SlotChoice,
+        data: ByteArray,
+        onProgress: (Int) -> Unit,
+        onLog: (String) -> Unit
+    ): Result<String> = withContext(Dispatchers.IO) {
+        val t = transport ?: return@withContext Result.failure(notConnected())
+        try {
+            val target = t.resolvePartition(baseName, slot)
+            t.download(data, onProgress, onLog)
+            t.flash(target, onLog)
+            Result.success(target)
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
+    }
+
     // פקודת fastboot חופשית, למשל "oem dump boot"
     suspend fun runCommand(cmd: String, onLog: (String) -> Unit): Result<String> =
         withContext(Dispatchers.IO) {
