@@ -155,8 +155,16 @@ private fun GuideScreen() {
                     // השאיבה נכשלה: מנסים את פקודת ה-OEM כגיבוי
                     setLog(ctx.getString(R.string.err_fetch_failed, err.message ?: ""))
                     fb.runCommand("oem disable-verification", setLog)
-                        .onSuccess { setLog(it) }
-                        .onFailure { setLog(it.message ?: "") }
+                        .onSuccess { resp ->
+                            setLog(resp)
+                            if (resp.startsWith("OKAY") || resp.isBlank()) {
+                                setLog(ctx.getString(R.string.verity_done))
+                                markDone(2)
+                            } else {
+                                setLog("ביטול אימות נכשל: $resp")
+                            }
+                        }
+                        .onFailure { setLog("ביטול אימות נכשל: ${it.message}") }
                 }
             busy = false
         }
