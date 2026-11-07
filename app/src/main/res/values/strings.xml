@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">מדריך רוט</string>
+
+    <string name="disclaimer_title">לפני שמתחילים</string>
+    <string name="disclaimer_body">פעולות אלו עלולות למחוק את כל הנתונים במכשיר, לבטל את האחריות שלו, ולהפוך אותו ללא שמיש אם משהו ישתבש. האפליקציה אינה אחראית לכל נזק שייגרם למכשיר או לנתונים. ההמשך על אחריותך בלבד.</string>
+    <string name="disclaimer_check">קראתי והבנתי, ואני מסכים לתנאים</string>
+    <string name="btn_continue">המשך</string>
+
+    <string name="battery_warning">הסוללה של המכשיר השולט פחות מ-80%. שים לב: אם תתחיל שאיבה או צריבה עכשיו והסוללה תיגמר באמצע, עלול להיגרם נזק.</string>
+    <string name="battery_level">סוללת המכשיר השולט: %1$d%%</string>
+
+    <string name="status_disconnected">לא מחובר ל-Fastboot. העבר את המכשיר למצב Bootloader וחבר USB</string>
+    <string name="status_connecting">מתחבר...</string>
+    <string name="status_connected">מחובר: %1$s</string>
+    <string name="bootloader_label">מצב Bootloader: %1$s</string>
+    <string name="bootloader_yes">פתוח</string>
+    <string name="bootloader_no">נעול</string>
+    <string name="bootloader_unknown">לא ידוע</string>
+    <string name="btn_connect">התחבר ל-Fastboot</string>
+    <string name="btn_disconnect">נתק</string>
+    <string name="btn_reboot">הפעל מערכת</string>
+
+    <string name="step1_title">פתיחת Bootloader</string>
+    <string name="step1_body">פתיחת Bootloader מוחקת את כל הנתונים במכשיר. גבה מה שחשוב לפני שממשיכים.</string>
+    <string name="step1_how">1. הגדרות ← אודות הטלפון ← לחץ 7 פעמים על מספר הבנייה\n2. חזור ← אפשרויות מפתח ← הפעל ניפוי USB ו-פתיחת OEM\n3. העבר את המכשיר למצב Bootloader וחבר אותו ל-USB\n4. לחץ התחבר ל-Fastboot למעלה, והמסך יציג את מצב ה-Bootloader</string>
+    <string name="step2_title">שאיבת boot.img</string>
+    <string name="step2_body">שאיבת המחיצה הנוכחית כדי שיהיה לך גיבוי ובסיס לפאצ'.</string>
+    <string name="step3_title">פאצ' עם Magisk</string>
+    <string name="step3_body">הפאצ' נעשה באפליקציית Magisk על המכשיר, מקובץ ה-boot המקורי.</string>
+    <string name="step4_title">צריבת boot מפוצ'</string>
+    <string name="step4_body">צריבת הקובץ המפוצ' חזרה למחיצה boot.</string>
+    <string name="step5_title">הפעלה מחדש</string>
+    <string name="step5_body">הפעלת המכשיר מחדש למערכת לאחר הצריבה.</string>
+    <string name="coming_soon">השלב הזה יופעל בבנייה הבאה</string>
+    <string name="step_done">הושלם</string>
+
+    <string name="err_no_fastboot_device">לא נמצא מכשיר fastboot. ודא שהמכשיר במצב Bootloader וכבל ה-OTG מחובר</string>
+    <string name="err_permission">לא ניתנה הרשאת USB</string>
+    <string name="err_file_open">לא ניתן לפתוח את הקובץ</string>
+    <string name="err_not_connected">אין חיבור Fastboot פעיל. לחץ התחבר</string>
+</resources>
