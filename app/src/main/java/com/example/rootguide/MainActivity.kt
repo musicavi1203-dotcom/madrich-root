@@ -137,6 +137,16 @@ private fun GuideScreen() {
         status = null
     }
 
+    // קריאה בלבד: מדפיס את כל ה-getvar ליומן, כולל גדלי המחיצות (למשל vbmeta)
+    fun checkPartitions() {
+        scope.launch {
+            busy = true
+            fb.getVarAll(setLog)
+                .onFailure { setLog(it.message ?: "") }
+            busy = false
+        }
+    }
+
     fun disableVerity() {
         scope.launch {
             busy = true
@@ -309,6 +319,9 @@ private fun GuideScreen() {
                         OutlinedButton(onClick = { rebootSystem() }, enabled = !busy) {
                             Text(text = stringResource(R.string.btn_reboot))
                         }
+                    }
+                    OutlinedButton(onClick = { checkPartitions() }, enabled = !busy, modifier = Modifier.fillMaxWidth()) {
+                        Text(text = stringResource(R.string.btn_check_partitions))
                     }
                 }
 

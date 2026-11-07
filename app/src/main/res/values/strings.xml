@@ -19,6 +19,7 @@
     <string name="bootloader_unknown">לא ידוע</string>
     <string name="btn_connect">התחבר ל-Fastboot</string>
     <string name="btn_disconnect">נתק</string>
+    <string name="btn_check_partitions">בדוק מחיצות (קריאה בלבד)</string>
     <string name="btn_reboot">הפעל מערכת</string>
     <string name="rebooting_system">המכשיר מופעל מחדש למערכת</string>
     <string name="btn_adb_connect">התחבר ב-ADB</string>
